@@ -1,0 +1,510 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WW_Association_AWP
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : ""
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : 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
+ configurations :
+  -
+    name : WW_Association_AWP
+    internal_properties : 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
+    configuration_id : 14606054794866062059
+    type : 2
+    generation_name : WW_Association_AWP.wdl
+    version : {}
+    index_page_generation_name : news
+    language : 2
+    64bits : true
+ elements :
+  identifier : 0x4c7b7a4e00709c11
+  elements :
+   -
+     name : PAGE_ADMIN_CONTACT_MEMBER
+     identifier : 0x4c7b7af2009c1c29
+     internal_properties : CAAAAAgAAAD+ZNbK+aYOISQNAamvBdPBUjWhMYlKU2OvBC7VDQ4Gyg7cEIiiHikuhbErlR3TryHraw==
+     physical_name : .\PAGE_ADMIN_CONTACT_MEMBER.wwh
+     type : 65538
+   -
+     name : form_gallery
+     identifier : 0x4c7b7ad80082b607
+     internal_properties : CAAAAAgAAADjX9vP/KkBGjMIDLCmHdgaXyIOFqYKmjN3Yriu0VqwEPTY9pKrFSIpgLwmkhLOqh7mbg==
+     physical_name : .\form_gallery.wwh
+     type : 65538
+   -
+     name : Overview_mobile
+     identifier : 0x4ce268c900e5e6d8
+     internal_properties : CAAAAAgAAACjn5uPPGlBWnNITHDmXhzWg+BOVlUHW6SkD4udVafv0TOdNdNrVWLpQPzm0lKOal6mrg==
+     physical_name : .\Overview_mobile.wwh
+     type : 65538
+   -
+     name : form_news_mobile
+     identifier : 0x4ce25f6100e32af8
+     internal_properties : CAAAAAgAAAAnIw8TkM1lBi8kqFyy+/i6ezqyam85hMFfeLmmXKDqzg72mHDPKT7FbKgS7rYq1soyMg==
+     physical_name : .\form_news_mobile.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_MEMBERS
+     identifier : 0x4c7b7b0400ac646e
+     internal_properties : CAAAAAgAAADeRDbq2YauQQQtoUmP6fNpYnVxUWnNUt9WnVNkqZIC/soQvGzCPknOZdHLNf3zjwHLSw==
+     physical_name : .\PAGE_ADMIN_LIST_MEMBERS.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_REACTIONS_GALLERY
+     identifier : 0x4c7b7b0f00b48cd5
+     internal_properties : CAAAAAgAAABXM7/jwL319l+UmCwijUSmK74qIiKHbXyj54FXKeKwKJRYdiIfma61HBiCfgb6hnpCwg==
+     physical_name : .\PAGE_ADMIN_LIST_REACTIONS_GALLERY.wwh
+     type : 65538
+   -
+     name : QRY_PHOTO_REPRESENTING_GALLERY
+     identifier : 0x4c7b7ae3008ee051
+     internal_properties : CAAAAAgAAABq4FK2dTJ6pbiB9T3Tn0uxXs1VfTY6ewl2aTJukDjk3CTuhhIuip2iCTWvCYlHM6Vv9w==
+     physical_name : .\QRY_PHOTO_REPRESENTING_GALLERY.WDR
+     type : 5
+   -
+     name : PAGE_ADMIN_LIST_GALLERIES
+     identifier : 0x4c7b7b0100aa5800
+     internal_properties : CAAAAAgAAAApJRF1su/H6M0Gdr5cEcow3UzU/Fg5+9qOW7M7ZbZkXKRsBpKtCxwjjop0TNQM9OQsNA==
+     physical_name : .\PAGE_ADMIN_LIST_GALLERIES.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_HOME
+     identifier : 0x4c7b7af0009a1594
+     internal_properties : CAAAAAgAAAD/W9fL+KUNHicMALRaCNzG57ACYtSAeyWK3CxNYqltg3l3G42nESYthLAqlh7SriLqag==
+     physical_name : .\PAGE_ADMIN_HOME.wwh
+     type : 65538
+   -
+     name : QRY_NB_REACTIONS_NEWS
+     identifier : 0x4c9cdbc1002afb68
+     internal_properties : CAAAAAgAAADEQiwIt+zE584TA6+tHOk7zPmbk7LeY7JW7fXr54GLvXOPHYukHCswm4dxT9cJ8efRUQ==
+     physical_name : .\QRY_NB_REACTIONS_NEWS.WDR
+     type : 5
+   -
+     name : QRY_MODIFY_REPRESENTING_PHOTO
+     identifier : 0x4c7b7ae2008cdff4
+     internal_properties : CAAAAAgAAACsqoSQL1Tcj1Zr6xfFBcV/qN/3vxiE/r9KqBCQQiZuolLs5LSMdIOIIx+ZZy+hWU+5uQ==
+     physical_name : .\QRY_MODIFY_REPRESENTING_PHOTO.WDR
+     type : 5
+   -
+     name : QRY_PHOTOS_GALLERY
+     identifier : 0x4c7b7ae30090e0bf
+     internal_properties : CAAAAAgAAAAwDmi0cyiAm7K3J8MBcgHD6Jk3/9rG39mKWAdRAWetY5WtJ/FAuM9U/zulE5NNNasVHQ==
+     physical_name : .\QRY_PHOTOS_GALLERY.WDR
+     type : 5
+   -
+     name : contact
+     identifier : 0x4c7b7ad4007ea593
+     internal_properties : CAAAAAgAAACd+fWpFkPr9Fli0pp4gkKI1ZZQgMr8t8u29QbJUMvLVVNJZSMR7/h/KhaAeDioUECIiA==
+     physical_name : .\Contact.wwh
+     type : 65538
+   -
+     name : QRY_DISPLAY_REACTIONS_NEWS
+     identifier : 0x4c7b7ae20086dedb
+     internal_properties : CAAAAAgAAACwjug086gAGzI3p0OB9P2/YD2PV+ZKX1lWjc2LZyFz/fv3lXPAOE/Uf7slkxPNtSuVnQ==
+     physical_name : .\QRY_DISPLAY_REACTIONS_NEWS.WDR
+     type : 5
+   -
+     name : galleries
+     identifier : 0x4c7b7ada0084bd19
+     internal_properties : CAAAAAgAAAA+JBYKuebO4eTNwelv05dVCmmxKZVXeXJDz9/cB+QwOLAislbi3uluxXFrVd0T7+ErKw==
+     physical_name : .\galleries.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_FORM_MEMBER
+     identifier : 0x4c7b7af900a438bd
+     internal_properties : CAAAAAgAAABJxbFVUg8nyO3mVp58uaqAPXxEnCh0JmhCrkluvV68RLw0XjoN6/wDrmpUrHRsFIRM1A==
+     physical_name : .\PAGE_ADMIN_FORM_MEMBER.wwh
+     type : 65538
+   -
+     name : QRY_DISPLAY_NEWS
+     identifier : 0x4c7b7ae30092e0fd
+     internal_properties : CAAAAAgAAADmbM7S0Y6mSWxl6RHHPSvpCm3J6VYiz2hOp9TMUiZuUrYkSMCKdoGGLenTLfXrlwnzcw==
+     physical_name : .\QRY_DISPLAY_NEWS.WDR
+     type : 5
+   -
+     name : PAGE_ADMIN_FORM_GALLERY
+     identifier : 0x4c7b7af800a23248
+     internal_properties : CAAAAAgAAADmbM7S0Y6mSWxl6RHHDjvZHkMNbe9QIOq21USyaNM5P8VJR8GKdoGGLenTLfXrlwnzcw==
+     physical_name : .\PAGE_ADMIN_FORM_GALLERY.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_ADVERTS
+     identifier : 0x4c7b7afe00a84b34
+     internal_properties : CAAAAAgAAABUMrz4x7z0915j0x/9Fd13oOevt4s3otmnxmq8BTZe4mLs5KSUbHuAKxeBfwf5gXdBwQ==
+     physical_name : .\PAGE_ADMIN_LIST_ADVERTS.wwh
+     type : 65538
+   -
+     name : ManageSiteConfig
+     identifier : 0x4cc85c45002e83f8
+     internal_properties : CAAAAAgAAAC7l+MnhMFpckuQhCguZ2SOJ3Yexvt7spKKuFwAWMTOUvJyfBwjnaqxGAT++ro2wjaepg==
+     physical_name : .\ManageSiteConfig.wdg
+     type : 7
+   -
+     name : news_mobile
+     identifier : 0x4ce24dfa008a2f2b
+     internal_properties : CAAAAAgAAAANCWW5BnM7ZEmSgioomlKoZVaw0PMN2ZpOr8hFmYMTLZsBjRshn6ivGgbwyEi4QLAYGA==
+     physical_name : .\news_mobile.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_MESSAGES
+     identifier : 0x4c7b7b0700ae7050
+     internal_properties : CAAAAAgAAACV8f0hnvuz7PHKyvJgo4pQOQSAAMDRlcqjZ7KVW7Bi/so2tGTp1+Bnwn54QMAwyDiAgA==
+     physical_name : .\PAGE_ADMIN_LIST_MESSAGES.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_FORM_ADVERT
+     identifier : 0x4c7b7af600a02aaa
+     internal_properties : CAAAAAgAAABp5VG1ci+HqI3GNv4coIpQIQ70FKLWviygTGZ5atFN69U/t2Hty9xjzkq0DJRMNKRs9A==
+     physical_name : .\PAGE_ADMIN_FORM_ADVERT.wwh
+     type : 65538
+   -
+     name : form_gallery_mobile
+     identifier : 0x4ce26e5800eb9e45
+     internal_properties : CAAAAAgAAABq4FK2dTJ6pbiB9T3TYEuR+kux2fgSCEGmNtVRl4UXMZt7dSMuip2iCTWvCYlHM6Vv9w==
+     physical_name : .\form_gallery_mobile.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_SITE_CONFIG
+     identifier : 0x4ca4bef100a3a3d6
+     internal_properties : CAAAAAgAAAC3k5+DIB0VFj80uEyC8OQez/iaqiXhMSKgrGVZe5GFu3GPA5W/OU7VfLginmaaZlqiog==
+     physical_name : .\PAGE_ADMIN_SITE_CONFIG.wwh
+     type : 65538
+   -
+     name : Overview
+     identifier : 0x4c7b7ad0007a99a1
+     internal_properties : CAAAAAgAAADqYNI29bL6JTgBdb1TMic9qj95CdunngxOz7QpHB/1y2Gdc6WuCh0iibUviQnHsyXvdw==
+     physical_name : .\Overview.wwh
+     type : 65538
+   -
+     name : form_news
+     identifier : 0x4c7b7ad50080ab5d
+     internal_properties : CAAAAAgAAAAGDG6ycS6GqYzFyfFn998FYnEZUX03LUa7T10Qw3gc7BzWPmrq1uFmzUmzDZVLN6kTEw==
+     physical_name : .\form_news.wwh
+     type : 65538
+   -
+     name : QRY_NB_REACTIONS_GALLERY
+     identifier : 0x4c9cdbf5002cc6b2
+     internal_properties : CAAAAAgAAADbt4OHJGFJUmtw5AjOTwSeByZuhrfj9POu08yU7Kxmukr61MSDfYqROOTe2lqWYla+Rg==
+     physical_name : .\QRY_NB_REACTIONS_GALLERY.WDR
+     type : 5
+   -
+     name : QRY_MESSAGES
+     identifier : 0x4c7b7ae2008adf87
+     internal_properties : CAAAAAgAAACb90NHZCGJkquwJMgOgDDaC0TGVu2Bhad2JV8BfxmFs3GPAwVDvcpR+CSeGppWIpZ+hg==
+     physical_name : .\QRY_MESSAGES.WDR
+     type : 5
+   -
+     name : QRY_DISPLAY_REACTIONS_GALLERY
+     identifier : 0x4c7b7ae20088df29
+     internal_properties : CAAAAAgAAABWPL7iwb72+VyVmSE3mjtxjsNd3WQY00iKVCt16Y8NO/kVm/1aprG2HRmDfQX7h3lDww==
+     physical_name : .\QRY_DISPLAY_REACTIONS_GALLERY.WDR
+     type : 5
+   -
+     name : QRY_DISPLAY_NEWS_MENU
+     identifier : 0x4c7b7ae30094e13b
+     internal_properties : CAAAAAgAAACKgPKWFVLahVhh1R3zV+sh3v2l/cbqVIOiFromWDDsFCzGzsqOan2CKRWPaSmnU0WPlw==
+     physical_name : .\QRY_DISPLAY_NEWS_MENU.WDR
+     type : 5
+   -
+     name : QRY_DISPLAY_GALLERIES
+     identifier : 0x4c7b7ae30098e1c8
+     internal_properties : CAAAAAgAAADGTC5yse7G6cwFCbGnLI+9fh9F3XgcEoNWTSl374kLNc9naa+qFiEmjYlzTdUL9+nTUw==
+     physical_name : .\QRY_DISPLAY_GALLERIES.WDR
+     type : 5
+   -
+     name : PAGE_ADMIN_LIST_REACTIONS_NEWS
+     identifier : 0x4c7b7b0c00b2840f
+     internal_properties : CAAAAAgAAAArJxN3tPG54vvANPge9GCSK3QmtohdwMu8cUXKLu2hp62zP1nzzdphyHRuSsoG8uYuNg==
+     physical_name : .\PAGE_ADMIN_LIST_REACTIONS_NEWS.wwh
+     type : 65538
+   -
+     name : contact_mobile
+     identifier : 0x4ce26ab800e773fa
+     internal_properties : CAAAAAgAAADFQS1xzuvD3OH6eoJQDyooiTRA0OEL4aWtCqTOMPyWul6CaKC5BxAXsm5oUNAA+OjQUA==
+     physical_name : .\contact_mobile.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_NEWS
+     identifier : 0x4c7b7afb00a63f42
+     internal_properties : CAAAAAgAAACJhfGVEk/niK2mFt48nLpIUd6UhDKm3t+ykgntXq1hh4mrCw1Nq7xD7iqUbDSsVESMlA==
+     physical_name : .\PAGE_ADMIN_LIST_NEWS.wwh
+     type : 65538
+   -
+     name : galleries_mobile
+     identifier : 0x4ce26baf00e93861
+     internal_properties : CAAAAAgAAACyiOo+DXoybUCZnSUrZFPRwmMJkSDC8Cp1TGYFc7lT9Rc/kfdWorW6EQ33wUG/uy2Xnw==
+     physical_name : .\galleries_mobile.wwh
+     type : 65538
+   -
+     name : QRY_DISPLAY_ADVERTS
+     identifier : 0x4c7b7ae30096e189
+     internal_properties : CAAAAAgAAACb90NHZCGJkquwJMgOiLBqq/S2lp2RNrRy4vep18Fdm6m3Gw1DvcpR+CSeGppWIpZ+hg==
+     physical_name : .\QRY_DISPLAY_ADVERTS.WDR
+     type : 5
+   -
+     name : news
+     identifier : 0x4c7b7ad2007c9f5c
+     internal_properties : CAAAAAgAAAAcenSgH0Ts/0abmyc1YEH71IGjqy1x0WNO7xBTRsVXkb9Dqf9cpLO4Ew+Jdz+xSb8JCQ==
+     physical_name : .\news.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_FORM_NEWS
+     identifier : 0x4c7b7af4009e2415
+     internal_properties : CAAAAAgAAACU8vw4h/y0tx4jk1+9Gc1/cCdf91t3fLu2kXY4kZp6tl7gMHjULDvAa9fBP8c5wTeBgQ==
+     physical_name : .\PAGE_ADMIN_FORM_NEWS.wwh
+     type : 65538
+   -
+     name : login
+     identifier : 0x4c7b7acf00789223
+     internal_properties : CAAAAAgAAAAzD2u/jPmx6sMYHKC24zzu347WflJ+JjNO68I0i5ACPsZOoIjbJTI5kIx2QsI+Oq4WHg==
+     physical_name : .\login.wwh
+     type : 65538
+   -
+     name : PAGE_ADMIN_LIST_PHOTOS_GALLERY
+     identifier : 0x4c7b7b0a00b079a3
+     internal_properties : CAAAAAgAAACd+fWpFkPr9Fli0pp43oKwNabQELob40mk9+N85DffMccF6T8R7/h/KhaAeDioUECIiA==
+     physical_name : .\PAGE_ADMIN_LIST_PHOTOS_GALLERY.wwh
+     type : 65538
+   -
+     name : PAGETPL_Inset_to_left
+     identifier : 0x40ca0a4f0037c84d
+     internal_properties : CAAAAAgAAACRbcnd6pefUBV+/gbUi77EvYiEpBkXtaKhjRM2MPAajmK+DBw1g5SbNuLcJOzknAz0fA==
+     physical_name : .\PAGETPL_Inset_to_left.wwt
+     type : 65541
+   -
+     name : PAGETPL_Generic_mobile
+     identifier : 0x40eab1cf003741b3
+     internal_properties : CAAAAAgAAAC3k5+DIB0VFj80uEyCEiiqvxwaEpWLSzt2wSxNnWOrHe/Bcae/OU7VfLginmaaZlqiog==
+     physical_name : .\PAGETPL_Generic_mobile.wwt
+     type : 65541
+   -
+     name : TestFiles
+     identifier : 0x42528f1c01852129
+     internal_properties : CAAAAAgAAADFQS1xzuvD3OH6eoJQCS60sYDowPvHHmNVUbXSDBZ8bFy0fqq5BxAXsm5oUNAA+OjQUA==
+     physical_name : .\TestFiles.wdg
+     type : 7
+   -
+     name : TEST_TestFiles
+     identifier : 0x42528f3801878f46
+     internal_properties : CAAAAAgAAADcujRgXwQsP4bb2+d1t4ELmIuXz+7ifK+tQx2yEvCsdLBuQkYc5PN4009Jt39xCf/JSQ==
+     physical_name : .\TEST_TestFiles.wxt
+     type : 17
+  other_elements : []
+  analysis : .\WW_Association_AWP.ana\WW_Association_AWP.wda
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ common_generation_directory : true
+ wb_skin : 150 Hybrid
+ wb_color_palette : Olive & Light
+ languages :
+  - en-GB
+ site_map :
+  roots : []
+  orphans :
+   -
+     name : Overview_mobile
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+     description :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+   -
+     name : PAGE_ADMIN_SITE_CONFIG
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de "L'association !"
+      en-GB : Welcome to the site of "The association!"
+     description :
+      fr-FR : Bienvenue sur le site de "L'association !"
+      en-GB : Welcome to the site of "The association!"
+   -
+     name : contact_mobile
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+     description :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+   -
+     name : form_gallery_mobile
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+     description :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+   -
+     name : form_news_mobile
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+     description :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+   -
+     name : galleries_mobile
+     parameters : []
+     title :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+     description :
+      fr-FR : Bienvenue sur le site de %1
+      en-GB : Welcome to the site of %1
+   -
+     name : news_mobile
+     parameters : []
+     title : {}
+     description : {}
+ url_rewriting :
+  internal_properties : CAAAAAgAAADkPzcUdUUS7wCiun+MCjqYH70RJdzkSv/nRvXZ3ENdikMa6bcHtsAH
+ code_elements :
+  internal_properties : CAAAAAgAAAC95BGprqnBodU8/PF6buv/Ait1ZVgPTXVWBQUoSFIiuQ1p9zv7mAjY0JqBUT3FrrKCPtlfnrVnodEljA+WEKo=
+  type_code : 0
+  p_codes :
+   -
+     code : |1+
+      //What is the name of the project 
+      gsRoughProjectName is string
+      gsRoughProjectName = ProjectInfo(piProjectName)
+      
+      gnMemberID			is int
+      ConfigureAWPContext(ctxDisk)
+      // Not connected by default
+      DeclareAWPContext(gnMemberID)
+      
+      IF gnMemberID = 0 THEN
+      	gnMemberID = PageParameter("ID")
+      END
+     type : 196608
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : WW_Association_AWP
+     identifier : 0x4c7b7a4e00719c11
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+ children :
+  -
+    explorer_type : pages
+    children :
+     -
+       name : MANAGEMENT
+       explorer_type : custom_folder
+       children :
+        -
+          name : PAGE_ADMIN_HOME
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_CONTACT_MEMBER
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_FORM_NEWS
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_FORM_ADVERT
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_FORM_GALLERY
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_FORM_MEMBER
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_NEWS
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_ADVERTS
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_GALLERIES
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_MEMBERS
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_MESSAGES
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_PHOTOS_GALLERY
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_REACTIONS_NEWS
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_LIST_REACTIONS_GALLERY
+          explorer_type : element
+          type : 65538
+        -
+          name : PAGE_ADMIN_SITE_CONFIG
+          explorer_type : element
+          type : 65538
+     -
+       name : MOBILE
+       explorer_type : custom_folder
+       children :
+        -
+          name : news_mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : form_news_mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : Overview_mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : contact_mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : galleries_mobile
+          explorer_type : element
+          type : 65538
+        -
+          name : form_gallery_mobile
+          explorer_type : element
+          type : 65538
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==

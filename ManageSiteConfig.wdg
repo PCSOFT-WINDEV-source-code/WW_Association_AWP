@@ -1,0 +1,773 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : ManageSiteConfig
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x1880a0e00465b172
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAAAyMhskXkUvixFYy2z+SeDJBZgmbzCiJIcSGZ7nVYrTeBs+sTjyCE7KGftf3k9TCt/1oy5/DBX3JHLKD0lduj4nuIF0gVQ+mQ==
+  type_code : 31
+  p_codes :
+   -
+     code : |1+
+      
+      CONSTANT
+      	
+      	CST_TEXT = 1
+      	CST_IMAGE = 2
+      	
+      	
+      	PRESIDENT_WORD = 5
+      	PRESIDENT_PHOTO = 6
+      	PRESENTATION_ASSO = 7
+      	ASSO_CONTACT = 8
+      	TITLE_SITE = 9
+      	SITE_LOGO = 10
+      	
+      END
+     type : 720896
+  procedures :
+   -
+     name : ReadPresidentWord
+     procedure_id : 1765587937936191874
+     type_code : 15
+     code : |1-
+      // Summary: Used to retrieve the president's word saved in the database
+      // Syntax:
+      //[ <Result> = ] ReadPresidentWord ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	string: President's word
+      
+      PROCEDURE ReadPresidentWord()
+      
+      sPresidentWord is string
+      
+      HReadSeekFirst(SiteConfiguration,Information,PRESIDENT_WORD)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sPresidentWord = SiteConfiguration.Text
+      	
+      	RESULT sPresidentWord
+      
+      ELSE
+      	
+      	RESULT ""
+      		
+      END
+     type : 458752
+   -
+     name : ReadPresidentPhoto
+     procedure_id : 1765587937936257410
+     type_code : 15
+     code : |1+
+      // Summary: Used to retrieve the photo of the president saved in the database
+      // Syntax:
+      //[ <Result> = ] ReadPresidentPhoto ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	ANSI string: Photo of the president of the association
+      
+      PROCEDURE ReadPresidentPhoto()
+      
+      sPresidentPhoto is string
+      
+      HReadSeekFirst(SiteConfiguration,Information,PRESIDENT_PHOTO)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sPresidentPhoto = SiteConfiguration.Text
+      	
+      ELSE
+      	
+      	RESULT "images/default-avatar.gif"
+      	
+      END
+      
+      
+      // Return the photo of the president (by localizing properly according to the call)
+      IF InAWPMode() = True THEN
+      	RESULT sPresidentPhoto
+      ELSE
+      	RESULT "UK/"+sPresidentPhoto
+      END
+     type : 458752
+   -
+     name : ReadAssoPresentation
+     procedure_id : 1765587937936322946
+     type_code : 15
+     code : |1-
+      // Summary: Used to retrieve the presentation of the association saved in the database
+      // Syntax:
+      //[ <Result> = ] ReadAssoPresentation ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	string: Presentation of the association
+      
+      PROCEDURE ReadAssoPresentation()
+      
+      sAssoPresentation is string
+      
+      HReadSeekFirst(SiteConfiguration,Information,PRESENTATION_ASSO)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sAssoPresentation = SiteConfiguration.Text
+      	
+      	RESULT sAssoPresentation
+      	
+      ELSE
+      	
+      	RESULT ""
+      	
+      END
+     type : 458752
+   -
+     name : ReadAssoContact
+     procedure_id : 1765587937936388482
+     type_code : 15
+     code : |1+
+      // Summary:  Used to retrieve the contact of the association saved in the database
+      // Syntax:
+      //[ <Result> = ] ReadAssoContact()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	string: Contact of the association
+      
+      PROCEDURE ReadAssoContact()
+      
+      sAssoContact is string
+      
+      HReadSeekFirst(SiteConfiguration,Information,ASSO_CONTACT)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sAssoContact = SiteConfiguration.Text
+      	
+      	RESULT sAssoContact
+      	
+      ELSE
+      	
+      	RESULT ""
+      	
+      END
+     type : 458752
+   -
+     name : WritePresidentPhoto
+     internal_properties : CAAAAAgAAACGz9etk8m+Lp1+G6hdWWkveZM+EjdZguj5LL4F8EvDRew7b4SqqzydYcR6IlzT+HSgmQarlLErNemtg3KOTTuWKZYi2sJxilyEwZT++p5b4tP0rJ/DZn4L4JAwbIcJ5odICPnnJ7PRnQ7XxeqKhWYz6yyCtRMydqnRYG50Isgo364LA5UKQUluz5oe+biRLbTjQggGz8eKTMgPBw==
+     procedure_id : 1765587937936454018
+     type_code : 15
+     code : |1+
+      // Summary: Save the photo of the president
+      // Syntax:
+      //[ <Result> = ] WritePresidentPhoto (<sFilePath> [, <bDelFile>])
+      //
+      // Parameters:
+      //	sFilePath: Path of the photo file that must be saved as photo of the president of the association
+      //	bDelFile (default value=1): True if the initial image  file must be deleted, False otherwise (False when restoring the default logo)
+      // Return value:
+      // 	boolean: True if the modification was performed, False otherwise
+      
+      
+      PROCEDURE WritePresidentPhoto(sFilePath, bDelFile = True)
+      
+      
+      // Local variables
+      ImagePresidentPhoto is an Image
+      sPathPresidentPhoto	is string
+      sPathGenerationFile is string
+      
+      
+      // Check the existence of the file
+      IF fFileExist(sFilePath) = False THEN
+      	RESULT False
+      END
+      
+      
+      // Build the file name for the generation image
+      sPathGenerationFile = CompleteDir(sReturnGenerationDir())+fExtractPath(sFilePath,fFileName) + fExtractPath(sFilePath,fExtension)
+      
+      // Is the image not too big?
+      ImagePresidentPhoto = sFilePath
+      
+      IF ImagePresidentPhoto..Height > 115 _OR_ ImagePresidentPhoto..Width > 115  THEN
+      	
+      	// Resize the image
+      	IF dResize(ImagePresidentPhoto,115,115,drHomotheticCentered) = False THEN
+      		
+      		// This is not a fatal error
+      	END
+      	
+      	SWITCH fExtractPath(sFilePath,fExtension)
+      		CASE ~= ".png"
+      			// Save the image: a PNG is required
+      			IF dSaveImagePNG(ImagePresidentPhoto,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		CASE ~= ".gif"
+      			// Save the image: a GIF is required
+      			IF dSaveImageGIF(ImagePresidentPhoto,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		CASE ~= ".bmp"
+      			// Save the image: a BMP is required
+      			IF dSaveImageBMP(ImagePresidentPhoto,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      		CASE ~= ".jpg", ".jpeg" :
+      			// Save the image: a JPG is required
+      			IF dSaveImageJPEG(ImagePresidentPhoto,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      		
+      		OTHER CASE
+      			
+      	END
+      END
+      
+      
+      // Copy the photo into the authorized _WEB directory
+      sPathPresidentPhoto = CompleteDir(sReturnDirWebUpload())+"avatar" + fExtractPath(sFilePath,fExtension)
+      
+      IF fCopyFileWebFolder(sPathGenerationFile,sPathPresidentPhoto) = False THEN
+      	RESULT False
+      END	
+      
+      IF fCopyFile(sFilePath,sPathGenerationFile) = False THEN
+      	RESULT False
+      END
+      
+      
+      // Build the path of the image in relation to fWebDir
+      sPathPresidentPhoto = Replace(sPathPresidentPhoto,fWebDir()+"\UK","")
+      
+      sPathPresidentPhoto = Replace(sPathPresidentPhoto,"\","/")
+      
+      IF Left(sPathPresidentPhoto,1)~="/" THEN sPathPresidentPhoto = Right(sPathPresidentPhoto,Length(sPathPresidentPhoto)-1)
+      
+      
+      //Modification in the database
+      HReadSeekFirst(SiteConfiguration,Information,PRESIDENT_PHOTO)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	SiteConfiguration.Text = sPathPresidentPhoto
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = PRESIDENT_PHOTO
+      	SiteConfiguration.InfoType = CST_TEXT
+      	SiteConfiguration.Text = sPathPresidentPhoto
+      	
+      	HAdd(SiteConfiguration)	
+      	
+      END
+      
+      IF bDelFile = True THEN
+      	// Delete the temporary file
+      	fDelete(sFilePath)
+      END
+      
+      // Modification successfully performed
+      RESULT True
+      
+      
+      
+      
+     type : 458752
+   -
+     name : WritePresidentWord
+     procedure_id : 1765587937936519554
+     type_code : 15
+     code : |1+
+      // Summary: Saves the president's word in the database
+      // Syntax:
+      //WritePresidentWord (<sPresidentWord>)
+      //
+      // Parameters:
+      //	sPresidentWord: Text for the president's word
+      // Return value:
+      // 	None
+      
+      PROCEDURE WritePresidentWord(sPresidentWord)
+      
+      HReadSeekFirst(SiteConfiguration,Information,PRESIDENT_WORD)
+      
+      SiteConfiguration.Text = sPresidentWord
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = PRESIDENT_WORD
+      	SiteConfiguration.InfoType = CST_TEXT
+      	
+      	HAdd(SiteConfiguration)
+      	
+      END
+     type : 458752
+   -
+     name : WriteAssoContact
+     procedure_id : 1765587937936585090
+     type_code : 15
+     code : |1+
+      // Summary: Saves the text for the contact of the association in the database
+      // Syntax:
+      //WriteAssoContact (<sAssoContact>)
+      //
+      // Parameters:
+      // 	sAssoContact: Text for the contact of the association 
+      // Return value:
+      // 	None
+      PROCEDURE WriteAssoContact(sAssoContact)
+      
+      HReadSeekFirst(SiteConfiguration,Information,ASSO_CONTACT)
+      
+      SiteConfiguration.Text = sAssoContact
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = ASSO_CONTACT
+      	SiteConfiguration.InfoType = CST_TEXT
+      	
+      	HAdd(SiteConfiguration)
+      	
+      END
+      
+     type : 458752
+   -
+     name : WriteAssoPresentation
+     procedure_id : 1765587937936650626
+     type_code : 15
+     code : |1+
+      // Summary: Saves the text for the presentation of the association in the database
+      // Syntax:
+      //WriteAssoPresentation (<sAssoPresentation>)
+      //
+      // Parameters:
+      // 	sAssoPresentation:  Text for the presentation of the association 
+      // Return value:
+      
+      PROCEDURE WriteAssoPresentation(sAssoPresentation)
+      
+      HReadSeekFirst(SiteConfiguration,Information,PRESENTATION_ASSO)
+      
+      SiteConfiguration.Text = sAssoPresentation
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = PRESENTATION_ASSO
+      	SiteConfiguration.InfoType = CST_TEXT
+      	
+      	HAdd(SiteConfiguration)
+      	
+      END
+     type : 458752
+   -
+     name : WriteTitle
+     procedure_id : 1765587937936716162
+     type_code : 15
+     code : |1+
+      // Summary: Saves the title of the site in the database
+      // Syntax:
+      //WriteTitle (<sTitle>)
+      //
+      // Parameters:
+      //	sTitle: The title
+      // Return value:
+      // 	None
+      
+      PROCEDURE WriteTitle(sTitle)
+      
+      HReadSeekFirst(SiteConfiguration,Information,TITLE_SITE)
+      
+      SiteConfiguration.Text = sTitle
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = TITLE_SITE
+      	SiteConfiguration.InfoType = CST_TEXT
+      	
+      	HAdd(SiteConfiguration)
+      	
+      END
+     type : 458752
+   -
+     name : ReadTitle
+     procedure_id : 1765587937936781698
+     type_code : 15
+     code : |1-
+      // Summary: Used to retrieve the title of the site in the database
+      // Syntax:
+      //[ <Result> = ] ReadTitle ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	string: Title of the site
+      
+      PROCEDURE ReadTitle()
+      
+      sTitle is string
+      
+      HReadSeekFirst(SiteConfiguration,Information,TITLE_SITE)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sTitle = SiteConfiguration.Text
+      	
+      	RESULT sTitle
+      
+      ELSE
+      	
+      	RESULT "The association !"
+      		
+      END
+     type : 458752
+   -
+     name : ReadSiteLogo
+     procedure_id : 1765587937936847234
+     type_code : 15
+     code : |1+
+      // Summary: Used to retrieve the site logo saved in the database
+      // Syntax:
+      //[ <Result> = ] ReadSiteLogo ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	ANSI string: Logo for the site of the association
+      
+      PROCEDURE ReadSiteLogo()
+      
+      sLogo is string 
+      
+      HReadSeekFirst(SiteConfiguration,Information,SITE_LOGO)
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	sLogo = SiteConfiguration.Text
+      	
+      	// Return the logo (by localizing properly according to the call)
+      	IF InAWPMode() = True THEN
+      		RESULT sLogo
+      	ELSE
+      		RESULT "UK/"+sLogo
+      	END		
+      END
+      
+      RESULT ""
+     type : 458752
+   -
+     name : WriteSiteLogo
+     internal_properties : CAAAAAgAAADANRHjVWPg+DPwLcKHS3tJ+0LG8PVnSqLDkGyLCEXVcdbjU35khfBf5wRAHOiZqgjOrTqx0ncrK//defzq2y1qVwpS1Ixj3irawfYIPvs84QjH0Zjcq6kqO2dJFeiu+yrNlwrsLGyIyF0eriPzKnv2EEuj0jAzlURU56ddS43too+CjBqPSlD5epxwT1bzQy4d5EqkbRHQEoJJwQ==
+     procedure_id : 1765587937936912770
+     type_code : 15
+     code : |1+
+      // Summary: Save the logo of the site
+      // Syntax:
+      //[ <Result> = ] WriteSiteLogo (<sFilePath> is string [, <bDelFile>])
+      //
+      // Parameters:
+      //	sFilePath (ANSI string): Path of the photo file that must be saved as logo for the site
+      //	bDelFile (default value=1): True if the initial image  file must be deleted, False otherwise (False when restoring the default logo)
+      // Return value:
+      // 	boolean: True if the modification was performed, False otherwise
+      
+      
+      PROCEDURE WriteSiteLogo(sFilePath is string, bDelFile = True)
+      
+      // Local variables
+      LogoImage is an Image
+      sLogoPath	is string
+      sPathGenerationFile is string
+      
+      
+      // Check the existence of the file
+      IF fFileExist(sFilePath) = False THEN
+      	RESULT False
+      END
+      
+      // Build the file name for the generation image
+      sPathGenerationFile = CompleteDir(sReturnGenerationDir()) + fExtractPath(sFilePath,fFileName) + fExtractPath(sFilePath,fExtension)
+      
+      // Is the image not too big?
+      LogoImage = sFilePath
+      
+      IF LogoImage..Height > 90 _OR_ LogoImage..Width > 200  THEN
+      	
+      	// Resize the image
+      	IF dResize(LogoImage,200,90,drHomotheticCentered) = False THEN
+      		// This is not a fatal error
+      	END
+      	
+      	SWITCH fExtractPath(sFilePath,fExtension)
+      		CASE ~= ".png"
+      			// Save the image: a PNG is required
+      			IF dSaveImagePNG(LogoImage,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		CASE ~= ".gif"
+      			// Save the image: a GIF is required
+      			IF dSaveImageGIF(LogoImage,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		CASE ~= ".bmp"
+      			// Save the image: a BMP is required
+      			IF dSaveImageBMP(LogoImage,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		CASE ~= ".jpg", ".jpeg" :
+      			// Save the image: a JPG is required
+      			IF dSaveImageJPEG(LogoImage,sPathGenerationFile) = False THEN
+      				RESULT False
+      			END	
+      			
+      		OTHER CASE
+      			
+      	END
+      ELSE
+      	
+      	IF fCopyFile(sFilePath,sPathGenerationFile) = False THEN
+      		RESULT False
+      	END
+      	
+      END
+      
+      // Copy the logo into the authorized _WEB directory
+      sLogoPath = CompleteDir(sReturnDirWebUpload())+"logo" + fExtractPath(sFilePath,fExtension)
+      IF fCopyFileWebFolder(sPathGenerationFile,sLogoPath) = False THEN
+      	RESULT False
+      END	
+      
+      
+      
+      // Build the path of the image in relation to fWebDir
+      sLogoPath = Replace(sLogoPath,fWebDir()+"\UK","")
+      
+      sLogoPath = Replace(sLogoPath,"\","/")
+      IF Left(sLogoPath,1)~="/" THEN sLogoPath = Right(sLogoPath,Length(sLogoPath)-1)
+      
+      
+      HReadSeekFirst(SiteConfiguration,Information,SITE_LOGO)
+      
+      
+      
+      IF HFound(SiteConfiguration) THEN
+      	
+      	SiteConfiguration.Text = sLogoPath
+      	HModify(SiteConfiguration)
+      	
+      ELSE
+      	
+      	SiteConfiguration.Information = SITE_LOGO
+      	SiteConfiguration.InfoType = CST_TEXT
+      	SiteConfiguration.Text = sLogoPath
+      	
+      	HAdd(SiteConfiguration)	
+      	
+      END
+      
+      IF bDelFile = True THEN
+      	// Delete the temporary file
+      	fDelete(sFilePath)
+      END
+      
+      // Modification successfully performed
+      RESULT True
+      
+      
+      
+      
+      
+     type : 458752
+   -
+     name : RestoreDefaultSiteLogo
+     procedure_id : 1765587937936978306
+     type_code : 15
+     code : |1+
+      // Summary: Restores the default logo of the site
+      // Syntax:
+      //[ <Result> = ] RestoreDefaultSiteLogo ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	boolean: True if the restore operation was performed, False otherwise
+      //
+      //
+      PROCEDURE RestoreDefaultSiteLogo()
+      
+      // Restore the logo
+       WriteSiteLogo(fDataDir()+["\"]+"default_logo.png", False)
+      	
+      
+      // Modification successfully performed
+      RESULT True
+      
+      
+     type : 458752
+   -
+     name : RestoreDefaultPresidentPhoto
+     procedure_id : 1765587937937043842
+     type_code : 15
+     code : |1+
+      // Summary: Restores the photo of the president
+      // Syntax:
+      //[ <Result> = ] RestoreDefaultPresidentPhoto ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	boolean: True if the restore operation was performed, False otherwise
+      //
+      //
+      PROCEDURE RestoreDefaultPresidentPhoto()
+      
+      // Restore the photo of the president
+       WritePresidentPhoto(fDataDir()+["\"]+"default-avatar.gif", False)
+      	
+      
+      // Modification successfully performed
+      RESULT True
+      
+      
+     type : 458752
+   -
+     name : sReturnGenerationDir
+     internal_properties : CAAAAAgAAADII9SyOMRvIbbGOyVqmos+w/DkPFKP+S50bgBFhSCSHxKHAYzJlsRlPGRWSHaileqIcDQlNkIBAySwAb586CzRA3SqAgTe05KqIv4W4ClaASL/ZcGZ4td0MJ34Mpdw4ktHji2/YKUpYlTHwukQFBX8if+LzjTJbJNMQYDqad1j0rpkFk47amnUuB0PLWAgmTjW8gX4K6A=
+     procedure_id : 1765587937937109378
+     type_code : 15
+     code : |1+
+      // Summary: Returns the full path of the directory for generating the images
+      // Syntax:
+      //[ <Result> = ] sReturnGenerationDir ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	ANSI string: Directory for generating the miniatures
+      //
+      
+      PROCEDURE sReturnGenerationDir()
+      
+      // Local variables
+      sGenDir is string = fDataDir()+["\"]+"gen"
+      
+      // Does the generation directory exist?
+      IF fDirectoryExist(sGenDir) = False THEN
+      	fMakeDir(sGenDir)
+      END
+      
+      RESULT sGenDir
+      
+     type : 458752
+   -
+     name : sReturnUploadDir
+     internal_properties : CAAAAAgAAABIlgWTg7S0RY+87eAGIj1+c6kS3DQUjdYYPVVYTdR3FRLl0wQWxdRumYZmMo82s9aWslTyKweIa3Lj4iAqkgGg4T2zcjW3IRaBibnBYwaN9uOE8w0ed8wyKF1/XAXuhha1/f2TmE0ZIcKYI18fytOpowLvhmgJ7AAeRpVCoI0Rtzgip0aX4fWWKXwPAh3oQiQ63hg/Rn1tkOwOBFk7nSuOodJDUS7e+2a02Z4jmvq+Jf1ttMnvIAquLblePrLFPw==
+     procedure_id : 1765587937937174914
+     type_code : 15
+     code : |1-
+      // Summary: Returns the full path of the upload directory
+      // Syntax:
+      //[ <Result> = ] sReturnUploadDir ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	ANSI string: Upload directory
+      //
+      
+      PROCEDURE sReturnUploadDir()
+      
+      // Local variables
+      sUploadDir is string = fDataDir()+["\"]+"upload"
+      
+      // Does the upload directory exist?
+      IF fDirectoryExist(sUploadDir) = False THEN
+      	fMakeDir(sUploadDir)
+      END
+      
+      RESULT sUploadDir
+     type : 458752
+   -
+     name : sReturnDirWebUpload
+     internal_properties : CAAAAAgAAAA0j3DGXcDcccqK55WKdsvitxRUzIpTpb6w2hQ1NVxKK4bTcQQBUnD9YNg6uI4WtQ4s3Ly1tg61ExiUbS6kpMz9N8g6IiwKr2rGnupI6jtUB5RpR+9b/MHeqsci3FGyDLFBoDe9gndjnO4pBEPCfu+Sq5ktJL5rbhXeGxrUk7+tYFym0LT9/CN+ehfZP/K6I/8xfplUz8Q=
+     procedure_id : 1765587937937240450
+     type_code : 15
+     code : |1+
+      // Summary: Returns the directory for generating the images
+      // Syntax:
+      //[ <Result> = ] sReturnWebUploadDir ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	ANSI string: Directory fo generating the images
+      //
+      
+      PROCEDURE sReturnDirWebUpload()
+      
+      // Local variables
+      sUploadDir is string
+      
+      sUploadDir = fWebDir()+["\UK\"]+"img_gen"
+      
+      // Does the upload directory exist?
+      IF fDirectoryExist(sUploadDir) = False THEN
+      	fMakeDir(sUploadDir)
+      END
+      
+      
+      RESULT sUploadDir
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_ProcéduresGlobales1
+resources :
+ string_res :
+  identifier : 0x1cc85c36004b4b0e
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text : {}
+     index : 1
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ
